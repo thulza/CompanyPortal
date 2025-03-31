@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="login.html" id="loginBtn">Login</a>
+                <a href="register.html" id="registerBtn">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search companies...">
+                <select class="search-input" id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="retail">Retail</option>
+                </select>
+                <button class="btn btn-primary" id="searchBtn">Search</button>
+            </div>
+        </section>
+
+        <section class="company-grid" id="companyGrid">
+            <!-- Companies will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <button id="addCompanyBtn" class="fab-button">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Modal for Add/Edit Company -->
+    <div class="modal" id="addCompanyModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Company Profile</h2>
+            <form id="addCompanyForm">
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyCategory">Category</label>
+                    <select id="companyCategory" required>
+                        <option value="technology">Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="retail">Retail</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="companyDescription">Description</label>
+                    <textarea id="companyDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="companyImage">Image URL</label>
+                    <input type="url" id="companyImage" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Company</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Company Details -->
+    <div id="companyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="companyDetails"></div>
+        </div>
+    </div>
+
+    <div class="stamp-container">
+        <img src="./Stamp.png" alt="Stamp" class="stamp-watermark">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

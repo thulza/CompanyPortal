@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Company Profile Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/register">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <form class="auth-form" action="/login" method="POST">
+            <h2>Login</h2>
+            <% if (locals.error) { %>
+                <div class="error-message"><%= error %></div>
+            <% } %>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p>Don't have an account? <a href="/register">Register here</a></p>
+        </form>
+    </main>
+</body>
+</html>

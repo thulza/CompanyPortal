@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Company Profile Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html" class="active">Login</a>
+                <a href="register.html">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="register-choice">
+            <h2>Choose Login Type</h2>
+            <div class="choice-cards">
+                <div class="choice-card" id="clientLogin">
+                    <i class="fas fa-user"></i>
+                    <h3>Client Login</h3>
+                    <form class="login-form" id="clientLoginForm" style="display: none;">
+                        <div class="form-group">
+                            <label for="clientEmail">Email Address*</label>
+                            <input type="email" id="clientEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPassword">Password*</label>
+                            <input type="password" id="clientPassword" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login as Client</button>
+                    </form>
+                    <p>Access your account to browse and review companies</p>
+                    <button class="btn btn-primary toggle-form" data-form="clientLoginForm">Login as Client</button>
+                </div>
+                <div class="choice-card" id="businessLogin">
+                    <i class="fas fa-building"></i>
+                    <h3>Business Owner Login</h3>
+                    <form class="login-form" id="businessLoginForm" style="display: none;">
+                        <div class="form-group">
+                            <label for="businessEmail">Business Email*</label>
+                            <input type="email" id="businessEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessPassword">Password*</label>
+                            <input type="password" id="businessPassword" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessRegistrationNumber">Business Registration Number*</label>
+                            <input type="text" id="businessRegistrationNumber" name="registrationNumber" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login as Business Owner</button>
+                    </form>
+                    <p>Access your business profile and manage your company</p>
+                    <button class="btn btn-primary toggle-form" data-form="businessLoginForm">Login as Business Owner</button>
+                </div>
+            </div>
+            <p class="form-footer">Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </main>
+
+    <div class="stamp-container">
+        <img src="./Stamp.png" alt="Stamp" class="stamp-watermark">
+    </div>
+
+    <script src="login.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

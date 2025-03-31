@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/companies">Companies</a>
+                <% if (locals.user) { %>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/logout">Logout</a>
+                <% } else { %>
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search companies...">
+                <select class="search-input">
+                    <option value="">All Categories</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="retail">Retail</option>
+                </select>
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </section>
+
+        <section class="company-grid">
+            <% companies.forEach(company => { %>
+                <div class="company-card">
+                    <img src="<%= company.image %>" alt="<%= company.name %>" class="company-image">
+                    <div class="company-info">
+                        <h3 class="company-name"><%= company.name %></h3>
+                        <div class="rating">
+                            <% for(let i = 0; i < Math.floor(company.rating); i++) { %>
+                                <i class="fas fa-star"></i>
+                            <% } %>
+                            <% if(company.rating % 1 !== 0) { %>
+                                <i class="fas fa-star-half-alt"></i>
+                            <% } %>
+                        </div>
+                        <p class="company-description"><%= company.description %></p>
+                        <a href="/companies/<%= company._id %>" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            <% }) %>
+        </section>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

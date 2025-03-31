@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration - Company Profile Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <form class="registration-form" id="clientRegistrationForm">
+            <h2>Client Registration</h2>
+            
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="firstName">First Name*</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Account Security</h3>
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" required>
+                    <small>Must be at least 8 characters long with numbers and special characters</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password*</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Preferences</h3>
+                <div class="form-group">
+                    <label>Interested Categories</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="technology"> Technology</label>
+                        <label><input type="checkbox" name="interests" value="finance"> Finance</label>
+                        <label><input type="checkbox" name="interests" value="healthcare"> Healthcare</label>
+                        <label><input type="checkbox" name="interests" value="retail"> Retail</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="newsletter" checked>
+                        Subscribe to newsletter for updates and recommendations
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the Terms of Service and Privacy Policy*
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Account</button>
+            <p class="form-footer">Already have an account? <a href="login.html">Login here</a></p>
+        </form>
+    </main>
+
+    <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Registration - Company Profile Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <form class="registration-form" id="businessRegistrationForm">
+            <h2>Business Owner Registration</h2>
+            
+            <div class="form-section">
+                <h3>Business Information</h3>
+                <div class="form-group">
+                    <label for="companyName">Company Name*</label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="businessType">Business Category*</label>
+                    <select id="businessType" name="businessType" required>
+                        <option value="">Select a category</option>
+                        <option value="technology">Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="retail">Retail</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="registrationNumber">Business Registration Number*</label>
+                    <input type="text" id="registrationNumber" name="registrationNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="vatNumber">VAT Number (if applicable)</label>
+                    <input type="text" id="vatNumber" name="vatNumber">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Contact Information</h3>
+                <div class="form-group">
+                    <label for="businessEmail">Business Email*</label>
+                    <input type="email" id="businessEmail" name="businessEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="businessPhone">Business Phone*</label>
+                    <input type="tel" id="businessPhone" name="businessPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">Company Website</label>
+                    <input type="url" id="website" name="website" placeholder="https://">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Business Address</h3>
+                <div class="form-group">
+                    <label for="streetAddress">Street Address*</label>
+                    <input type="text" id="streetAddress" name="streetAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City*</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="postalCode">Postal Code*</label>
+                    <input type="text" id="postalCode" name="postalCode" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country*</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Account Security</h3>
+                <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" required>
+                    <small>Must be at least 8 characters long with numbers and special characters</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password*</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Documentation</h3>
+                <div class="form-group">
+                    <label for="businessLicense">Business License/Registration Document*</label>
+                    <input type="file" id="businessLicense" name="businessLicense" accept=".pdf,.doc,.docx" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyLogo">Company Logo</label>
+                    <input type="file" id="companyLogo" name="companyLogo" accept="image/*">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required>
+                    I agree to the Terms of Service and Privacy Policy*
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register Business</button>
+            <p class="form-footer">Already have an account? <a href="login.html">Login here</a></p>
+        </form>
+    </main>
+
+    <script src="register.js"></script>
+</body>
+</html>

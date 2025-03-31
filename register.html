@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Company Profile Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="register-choice">
+            <h2>Choose Registration Type</h2>
+            <div class="choice-cards">
+                <div class="choice-card" onclick="window.location.href='register-client.html'">
+                    <i class="fas fa-user"></i>
+                    <h3>Register as Client</h3>
+                    <p>Browse and review companies, save favorites, and more</p>
+                    <button class="btn btn-primary">Continue as Client</button>
+                </div>
+                <div class="choice-card" onclick="window.location.href='register-business.html'">
+                    <i class="fas fa-building"></i>
+                    <h3>Register as Business Owner</h3>
+                    <p>Create and manage your company profile, interact with clients</p>
+                    <button class="btn btn-primary">Continue as Business Owner</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="stamp-container">
+        <img src="./Stamp.png" alt="Stamp" class="stamp-watermark">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

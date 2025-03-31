@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= company.name %> - Company Profile Portal</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="navbar-brand">CompanyPortal</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/companies">Companies</a>
+                <% if (locals.user) { %>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/logout">Logout</a>
+                <% } else { %>
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="company-detail">
+            <img src="<%= company.image %>" alt="<%= company.name %>" class="company-detail-image">
+            <div class="company-detail-info">
+                <h1><%= company.name %></h1>
+                <div class="rating">
+                    <% for(let i = 0; i < Math.floor(company.rating); i++) { %>
+                        <i class="fas fa-star"></i>
+                    <% } %>
+                    <% if(company.rating % 1 !== 0) { %>
+                        <i class="fas fa-star-half-alt"></i>
+                    <% } %>
+                    <span>(<%= company.rating %> / 5)</span>
+                </div>
+                <p class="company-category">Category: <%= company.category %></p>
+                <p class="company-description"><%= company.description %></p>
+                
+                <% if (locals.user) { %>
+                    <div class="rating-input" data-company-id="<%= company._id %>">
+                        <h3>Rate this company:</h3>
+                        <div class="stars">
+                            <% for(let i = 1; i <= 5; i++) { %>
+                                <i class="far fa-star" data-rating="<%= i %>"></i>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
+
+                <div class="reviews">
+                    <h3>Reviews</h3>
+                    <% if (company.reviews && company.reviews.length > 0) { %>
+                        <% company.reviews.forEach(review => { %>
+                            <div class="review">
+                                <div class="review-rating">
+                                    <% for(let i = 0; i < review.rating; i++) { %>
+                                        <i class="fas fa-star"></i>
+                                    <% } %>
+                                </div>
+                                <% if (review.comment) { %>
+                                    <p class="review-comment"><%= review.comment %></p>
+                                <% } %>
+                                <p class="review-date"><%= new Date(review.date).toLocaleDateString() %></p>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <p>No reviews yet.</p>
+                    <% } %>
+                </div>
+
+                <% if (locals.user && company.owner && user._id === company.owner._id) { %>
+                    <div class="owner-controls">
+                        <h3>Owner Controls</h3>
+                        <a href="/companies/<%= company._id %>/edit" class="btn btn-primary">Edit Company Profile</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

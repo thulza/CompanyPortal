@@ -16,14 +16,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800',
         rating: 4.5,
         reviews: [],
-        businessEmail: 'contact@techinnovators.com',
-        businessPhone: '+1 (555) 123-4567',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://techinnovators.com',
         address: {
-            street: '123 Tech Avenue',
-            city: 'Silicon Valley',
-            postalCode: '94025',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 6:00 PM',
@@ -39,14 +39,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800',
         rating: 4.2,
         reviews: [],
-        businessEmail: 'info@dsp.com',
-        businessPhone: '+1 (555) 901-2345',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://digitalsolutionspro.com',
         address: {
-            street: '456 Digital Drive',
-            city: 'New York City',
-            postalCode: '10001',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 5:00 PM',
@@ -245,9 +245,9 @@ const sampleCompanies = [
 
 // Initialize data
 function initializeData() {
-    if (!localStorage.getItem(STORAGE_KEYS.COMPANIES)) {
-        localStorage.setItem(STORAGE_KEYS.COMPANIES, JSON.stringify(sampleCompanies));
-    }
+    // Always reset companies data
+    localStorage.setItem(STORAGE_KEYS.COMPANIES, JSON.stringify(sampleCompanies));
+    
     if (!localStorage.getItem(STORAGE_KEYS.USERS)) {
         localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify([]));
     }
@@ -256,10 +256,19 @@ function initializeData() {
 // Display companies in the grid
 function displayCompanies(companies = null) {
     const companyGrid = document.getElementById('companyGrid');
-    if (!companyGrid) return;
+    if (!companyGrid) {
+        console.error('Company grid not found');
+        return;
+    }
 
     // If no companies provided, get from localStorage
     if (!companies) {
+        companies = JSON.parse(localStorage.getItem(STORAGE_KEYS.COMPANIES)) || [];
+    }
+
+    if (companies.length === 0) {
+        console.log('No companies found, reinitializing data');
+        initializeData();
         companies = JSON.parse(localStorage.getItem(STORAGE_KEYS.COMPANIES)) || [];
     }
 
@@ -276,27 +285,49 @@ function displayCompanies(companies = null) {
                     <span class="stars">${'★'.repeat(Math.round(company.rating))}</span>
                     <span class="rating-value">${company.rating}</span>
                 </div>
+                <div class="quick-actions">
+                    <button class="quick-action-btn" onclick="window.location.href='tel:${company.businessPhone}'">
+                        <i class="fas fa-phone"></i>
+                    </button>
+                    <button class="quick-action-btn" onclick="window.location.href='mailto:${company.businessEmail}'">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                    <button class="quick-action-btn" onclick="window.location.href='https://maps.google.com/?q=${encodeURIComponent(
+                        `${company.address.street}, ${company.address.city}, ${company.address.postalCode}, ${company.address.country}`
+                    )}'">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                    <button class="quick-action-btn" onclick="window.location.href='${company.website}'">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                </div>
             </div>
         </div>
     `).join('');
 
     // Add click event listeners to company cards
     document.querySelectorAll('.company-card').forEach(card => {
-        card.addEventListener('click', () => showCompanyPreview(card.dataset.id));
+        card.addEventListener('click', (e) => {
+            // Don't show preview if clicking on quick action buttons
+            if (!e.target.closest('.quick-actions')) {
+                showCompanyPreview(card.dataset.id);
+            }
+        });
     });
 }
 
-// Search and filter companies
+// Search companies
 function searchCompanies() {
-    const searchInput = document.querySelector('.search-input').value.toLowerCase();
+    const searchTerm = document.querySelector('.search-input').value.toLowerCase();
     const categoryFilter = document.getElementById('categoryFilter').value.toLowerCase();
     
     const companies = JSON.parse(localStorage.getItem(STORAGE_KEYS.COMPANIES)) || [];
     
     const filteredCompanies = companies.filter(company => {
-        const matchesSearch = company.name.toLowerCase().includes(searchInput) ||
-                            company.description.toLowerCase().includes(searchInput);
-        const matchesCategory = !categoryFilter || company.category === categoryFilter;
+        const matchesSearch = company.name.toLowerCase().includes(searchTerm) ||
+                            company.description.toLowerCase().includes(searchTerm);
+        const matchesCategory = !categoryFilter || company.category.toLowerCase() === categoryFilter;
+        
         return matchesSearch && matchesCategory;
     });
     

@@ -62,14 +62,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800',
         rating: 4.7,
         reviews: [],
-        businessEmail: 'contact@cybertechsystems.com',
-        businessPhone: '+1 (555) 789-0123',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://cybertechsystems.com',
         address: {
-            street: '789 CyberTech Way',
-            city: 'San Francisco',
-            postalCode: '94105',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 6:00 PM',
@@ -86,14 +86,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800',
         rating: 4.0,
         reviews: [],
-        businessEmail: 'info@globalfinance.com',
-        businessPhone: '+1 (555) 111-2222',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://globalfinance.com',
         address: {
-            street: '123 Financial Street',
-            city: 'London',
-            postalCode: 'EC2V 7EA',
-            country: 'United Kingdom'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 5:00 PM',
@@ -109,14 +109,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
         rating: 4.4,
         reviews: [],
-        businessEmail: 'contact@investmentmasters.com',
-        businessPhone: '+1 (555) 333-4444',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://investmentmasters.com',
         address: {
-            street: '456 Investment Drive',
-            city: 'New York City',
-            postalCode: '10001',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 5:00 PM',
@@ -132,14 +132,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800',
         rating: 4.6,
         reviews: [],
-        businessEmail: 'info@securebankingcorp.com',
-        businessPhone: '+1 (555) 555-6666',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://securebankingcorp.com',
         address: {
-            street: '789 Banking Way',
-            city: 'Chicago',
-            postalCode: '60606',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 5:00 PM',
@@ -156,19 +156,19 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800',
         rating: 4.3,
         reviews: [],
-        businessEmail: 'contact@healthcareplus.com',
-        businessPhone: '+1 (555) 777-8888',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://healthcareplus.com',
         address: {
-            street: '123 Healthcare Drive',
-            city: 'Los Angeles',
-            postalCode: '90001',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
-            weekday: '9:00 AM - 5:00 PM',
-            saturday: '10:00 AM - 2:00 PM',
-            sunday: 'Closed'
+            weekday: '24/7',
+            saturday: '24/7',
+            sunday: '24/7'
         }
     },
     {
@@ -179,14 +179,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800',
         rating: 4.5,
         reviews: [],
-        businessEmail: 'info@meditechsolutions.com',
-        businessPhone: '+1 (555) 999-0000',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://meditechsolutions.com',
         address: {
-            street: '456 MediTech Way',
-            city: 'Boston',
-            postalCode: '02101',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 5:00 PM',
@@ -203,14 +203,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800',
         rating: 4.1,
         reviews: [],
-        businessEmail: 'contact@retailexpress.com',
-        businessPhone: '+1 (555) 111-1111',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://retailexpress.com',
         address: {
-            street: '123 Retail Drive',
-            city: 'Miami',
-            postalCode: '33101',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 5:00 PM',
@@ -226,14 +226,14 @@ const sampleCompanies = [
         image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800',
         rating: 4.2,
         reviews: [],
-        businessEmail: 'info@shopsmart.com',
-        businessPhone: '+1 (555) 222-3333',
+        businessEmail: 'pharezsigasa@gmail.com',
+        businessPhone: '+27 60 642 9587',
         website: 'https://shopsmart.com',
         address: {
-            street: '456 ShopSmart Way',
-            city: 'Dallas',
-            postalCode: '75201',
-            country: 'United States'
+            street: '6866 Ext 7 Sakhile',
+            city: 'Standerton',
+            postalCode: '2431',
+            country: 'South Africa'
         },
         businessHours: {
             weekday: '9:00 AM - 5:00 PM',
@@ -482,6 +482,26 @@ function showCompanyFullDetails(companyId) {
     modal.style.display = 'block';
 }
 
+// Theme toggle functionality
+function initTheme() {
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Update checkbox state
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.checked = theme === 'dark';
+    }
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+}
+
 // Handle stamp visibility on scroll
 function handleStampVisibility() {
     const stamp = document.querySelector('.stamp-watermark');
@@ -496,8 +516,46 @@ function handleStampVisibility() {
     }
 }
 
+// Scroll to top functionality
+function handleScroll() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (!scrollToTopBtn) return;
+
+    // Show button when page is scrolled more than 500px
+    if (window.scrollY > 500) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize theme
+    initTheme();
+    
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('change', toggleTheme);
+    }
+    
+    // Scroll to top
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener('click', scrollToTop);
+    }
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+    
     // Initialize data
     initializeData();
     

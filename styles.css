@@ -1,10 +1,45 @@
 :root {
-    --primary-color: #2c3e50;
+    /* Theme independent colors */
+    --primary-color: #2d3e50;
     --secondary-color: #3498db;
-    --background-color: #f8f9fa;
     --text-color: #333;
     --border-color: #ddd;
     --bg-color: #f8f9fa;
+    --header-bg: #2d3e50;
+    --header-text: #ffffff;
+
+    /* Light theme variables */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #ffffff;
+    --text-secondary: #666666;
+    --accent-color: #3d9cff;
+    --border-color: #dee2e6;
+    --card-bg: #ffffff;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --nav-bg: var(--header-bg);
+    --nav-text: var(--header-text);
+    --input-bg: #ffffff;
+    --input-text: #333333;
+    --modal-bg: #ffffff;
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-color: #3d9cff;
+    --border-color: #404040;
+    --card-bg: #2d2d2d;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --nav-bg: var(--header-bg);
+    --nav-text: var(--header-text);
+    --input-bg: #333333;
+    --input-text: #ffffff;
+    --modal-bg: #2d2d2d;
+    --modal-overlay: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -18,13 +53,14 @@ body {
     padding: 0;
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    position: relative;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Navbar */
 .navbar {
-    background-color: var(--primary-color);
+    background-color: var(--nav-bg);
     padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -38,7 +74,7 @@ body {
 }
 
 .navbar-brand {
-    color: white;
+    color: var(--text-primary);
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
@@ -50,14 +86,14 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--secondary-color);
+    color: var(--accent-color);
 }
 
 /* Container */
@@ -70,7 +106,7 @@ body {
 
 /* Search Section */
 .search-section {
-    background: white;
+    background: var(--input-bg);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -91,6 +127,8 @@ body {
     font-size: 1rem;
     flex: 1;
     min-width: 200px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
 }
 
 input.search-input {
@@ -112,12 +150,14 @@ select.search-input {
 }
 
 .btn-primary {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
+    background-color: var(--accent-color);
+    filter: brightness(110%);
 }
 
 .danger {
@@ -137,14 +177,15 @@ select.search-input {
 }
 
 .company-card {
-    background: white;
+    background-color: var(--card-bg);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow);
     overflow: hidden;
     transition: transform 0.3s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--border-color);
 }
 
 .company-card:hover {
@@ -173,19 +214,19 @@ select.search-input {
 
 .company-info h3 {
     margin: 0;
-    color: var(--primary-color);
+    color: var(--text-primary);
     font-size: 1.25rem;
 }
 
 .company-info .category {
-    color: var(--secondary-color);
+    color: var(--text-secondary);
     text-transform: capitalize;
     font-size: 0.9rem;
     margin: 0;
 }
 
 .company-info .description {
-    color: #666;
+    color: var(--text-secondary);
     margin: 0.5rem 0;
     line-height: 1.4;
     flex-grow: 1;
@@ -202,7 +243,7 @@ select.search-input {
 }
 
 .company-info .rating-value {
-    color: #666;
+    color: var(--text-secondary);
 }
 
 /* Company Details Modal */
@@ -219,12 +260,12 @@ select.search-input {
 }
 
 .company-details h2 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin: 1rem 0;
 }
 
 .company-details .category {
-    color: var(--secondary-color);
+    color: var(--text-secondary);
     text-transform: capitalize;
     margin-bottom: 1rem;
 }
@@ -280,13 +321,13 @@ select.search-input {
 }
 
 .preview-content h2 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 .preview-content .category {
-    color: var(--secondary-color);
+    color: var(--text-secondary);
     text-transform: capitalize;
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -296,7 +337,7 @@ select.search-input {
     line-height: 1.6;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
-    color: #444;
+    color: var(--text-secondary);
 }
 
 .preview-content .rating {
@@ -346,7 +387,7 @@ select.search-input {
 }
 
 .header-content h2 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -364,7 +405,7 @@ select.search-input {
 }
 
 .details-section h3 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -377,13 +418,13 @@ select.search-input {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--modal-overlay);
     z-index: 1000;
     overflow-y: auto;
 }
 
 .modal-content {
-    background-color: white;
+    background-color: var(--modal-bg);
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 8px;
@@ -391,6 +432,7 @@ select.search-input {
     max-width: 1000px;
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
 }
 
 .close {
@@ -404,7 +446,7 @@ select.search-input {
 }
 
 .close:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Responsive Design */
@@ -516,7 +558,7 @@ select.search-input {
 .review {
     background: #f8f9fa;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .review .rating {
@@ -570,7 +612,7 @@ select.search-input {
 
 .register-choice h2 {
     margin-bottom: 2rem;
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .choice-cards {
@@ -581,12 +623,13 @@ select.search-input {
 }
 
 .choice-card {
-    background: white;
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
     cursor: pointer;
+    border: 1px solid var(--border-color);
 }
 
 .choice-card:hover {
@@ -595,17 +638,17 @@ select.search-input {
 
 .choice-card i {
     font-size: 3rem;
-    color: var(--secondary-color);
+    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
 .choice-card h3 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .choice-card p {
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
 }
 
@@ -613,10 +656,11 @@ select.search-input {
 .registration-form {
     max-width: 800px;
     margin: 2rem auto;
-    background: white;
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
 }
 
 .form-section {
@@ -626,7 +670,7 @@ select.search-input {
 }
 
 .form-section h3 {
-    color: var(--primary-color);
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
@@ -649,7 +693,7 @@ select.search-input {
 }
 
 .form-footer a {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -666,7 +710,7 @@ input[type="file"] {
 }
 
 input[type="file"]::file-selector-button {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -700,7 +744,7 @@ select:invalid {
 .login-form label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .login-form input {
@@ -787,5 +831,110 @@ select:invalid {
     @keyframes fadeInOut {
         0%, 100% { opacity: 0; }
         20%, 80% { opacity: 1; }
+    }
+}
+
+/* Theme Toggle Switch */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    margin-right: 15px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    border: 2px solid #414141;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: white;
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.switch input:checked + .slider {
+    box-shadow: 0 0 20px rgba(9, 117, 241, 0.8);
+    border: 2px solid #0974f1;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(1.5em);
+}
+
+/* Customize for navbar */
+.nav-links .switch {
+    margin-top: 2px;
+}
+
+.nav-links .slider {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-links .switch input:checked + .slider {
+    border-color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background: var(--primary-color);
+}
+
+.scroll-to-top.visible {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
